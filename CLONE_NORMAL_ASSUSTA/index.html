@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="pt-BR">
+<html lang="pt-BR" data-theme="dark">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,8 +11,12 @@
 <body>
   <a class="skip-link" href="#conteudo">Pular para o conteúdo principal</a>
   <header class="topbar">
-    <a class="brand" href="#inicio" aria-label="O Normal Assusta? início"><span class="brand-mark">∿</span><span>matemática em movimento<small>RECURSO EDUCACIONAL ABERTO</small></span></a>
+    <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Alternar para tema claro" title="Alternar para tema claro" aria-pressed="true"><span class="theme-icon" aria-hidden="true">☼</span><span class="theme-label">Tema claro</span></button>
     <nav aria-label="Navegação principal"><a href="#ideia">A ideia</a><a href="#calculadora">Calculadora</a><a href="#tabela">Tabela Z</a></nav>
+    <a class="univesp-logo univesp-header" href="https://univesp.br/" aria-label="Site oficial da UNIVESP">
+      <img class="logo-dark" src="../assets/univesp-simplificado-negativo.svg" alt="UNIVESP">
+      <img class="logo-light" src="../assets/univesp-simplificado-positivo.svg" alt="" aria-hidden="true">
+    </a>
   </header>
   <main id="conteudo">
     <section class="hero" id="inicio">
@@ -30,7 +34,11 @@
     <section class="how section-wrap"><div class="section-kicker">03 / LENDO A CURVA</div><div class="how-head"><h2>O que queremos<br>saber?</h2><p>A tabela mostra a área entre a média (Z = 0) e um valor z. A probabilidade final depende da região que você quer descobrir.</p></div><div class="scenarios"><article><span class="scenario-num">01</span><div class="mini-curve"><i class="shade right"></i></div><h3>Acima de z</h3><p>Para <strong>P(Z &gt; z)</strong>, subtraia da metade da curva a área da tabela. Se z é negativo, some essa área a 0,5.</p><code>z = 0,75 → 0,5 − 0,2734 = 0,2266</code></article><article><span class="scenario-num">02</span><div class="mini-curve"><i class="shade left"></i></div><h3>Abaixo de z</h3><p>Para <strong>P(Z &lt; z)</strong>, some a área da tabela a 0,5 quando z é positivo. Para z negativo, subtraia.</p><code>z = 0,75 → 0,5 + 0,2734 = 0,7734</code></article><article><span class="scenario-num">03</span><div class="mini-curve"><i class="shade center"></i></div><h3>Entre −z e z</h3><p>Para valores simétricos em torno da média, dobre a área que fica entre 0 e z.</p><code>z = 0,75 → 2 × 0,2734 = 0,5468</code></article></div></section>
     <section class="table-section" id="tabela"><div class="section-wrap"><div class="section-kicker light-kicker">04 / CONSULTA</div><div class="table-heading"><div><h2>Tabela da distribuição<br>normal padronizada</h2><p>Encontre a linha pela unidade e primeira casa decimal de Z; a coluna indica a segunda casa decimal. Valores mostram a área entre 0 e |Z|.</p></div><label class="table-search">Buscar Z<input id="table-search" inputmode="decimal" placeholder="Ex.: 1,23"></label></div><div id="table-message" class="table-message" aria-live="polite"></div><div class="table-scroll"><table id="z-table"><caption>Área entre a média (Z igual a zero) e o escore Z. Linhas de 0,0 a 3,9; colunas de 0,00 a 0,09.</caption><thead><tr><th scope="col">Z</th></tr></thead><tbody></tbody></table></div><div class="table-foot"><span>Valores arredondados a quatro casas decimais</span><button class="button button-light" id="back-top">Voltar ao início ↑</button></div></div></section>
   </main>
-  <footer><div class="footer-main"><a class="brand footer-brand" href="#inicio"><span class="brand-mark">∿</span><span>matemática em movimento<small>RECURSO EDUCACIONAL ABERTO</small></span></a><p>Um recurso para olhar os dados<br>com um pouco mais de curiosidade.</p><button class="text-button" id="credits-button">Créditos do projeto ↗</button></div><div class="footer-meta"><span>Inspirado no REA “O Normal Assusta?” · UNIVESP · 2019</span><span>Conteúdo educacional · Distribuído sob licença MIT</span></div><dialog id="credits"><button class="dialog-close" aria-label="Fechar">×</button><p class="eyebrow">SOBRE ESTE RECURSO</p><h2>Créditos</h2><p>O site de referência é um Recurso Educacional Aberto desenvolvido pela Universidade Virtual do Estado de São Paulo (UNIVESP), publicado sob licença MIT.</p><p>Docente responsável: Richardson Barbosa Gomes da Silva. Coordenação: Édison Trombeta. Roteirização e design instrucional: Alfredo S. V. Coelho e Nádia Rubio Pirillo. Ilustração: Francesco Micieli. Layout: Graciela Tocchetto. Programação: Alberto Ortiz Mendes e Bruna Garabito.</p><button class="button button-dark" id="close-credits">Fechar</button></dialog></footer>
+  <footer><div class="footer-main"><a class="univesp-logo univesp-footer" href="https://univesp.br/" aria-label="Site oficial da UNIVESP">
+    <img class="logo-dark" src="../assets/univesp-completo-negativo.svg" alt="Universidade Virtual do Estado de São Paulo — UNIVESP">
+    <img class="logo-light" src="../assets/univesp-completo-positivo.svg" alt="" aria-hidden="true">
+  </a><p>Um recurso para olhar os dados<br>com um pouco mais de curiosidade.</p><button class="text-button" id="credits-button">Créditos do projeto ↗</button></div><div class="footer-meta"><span>Inspirado no REA “O Normal Assusta?” · UNIVESP · 2019</span><span>Conteúdo educacional · Distribuído sob licença MIT</span></div><dialog id="credits"><button class="dialog-close" aria-label="Fechar">×</button><p class="eyebrow">SOBRE ESTE RECURSO</p><h2>Créditos</h2><p>O site de referência é um Recurso Educacional Aberto desenvolvido pela Universidade Virtual do Estado de São Paulo (UNIVESP), publicado sob licença MIT.</p><p>Docente responsável: Richardson Barbosa Gomes da Silva. Coordenação: Édison Trombeta. Roteirização e design instrucional: Alfredo S. V. Coelho e Nádia Rubio Pirillo. Ilustração: Francesco Micieli. Layout: Graciela Tocchetto. Programação: Alberto Ortiz Mendes e Bruna Garabito.</p><button class="button button-dark" id="close-credits">Fechar</button></dialog></footer>
   <script src="app.js"></script>
 </body>
 </html>
+

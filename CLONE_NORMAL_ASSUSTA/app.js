@@ -124,3 +124,31 @@ $('#credits-button').addEventListener('click', () => credits.showModal());
 $('#close-credits').addEventListener('click', () => credits.close());
 $('.dialog-close').addEventListener('click', () => credits.close());
 credits.addEventListener('click', event => { if (event.target === credits) credits.close(); });
+
+// Start in the dark UNIVESP theme; remember the reader's preference when available.
+const themeToggle = $('#theme-toggle');
+const themeIcon = themeToggle.querySelector('.theme-icon');
+const themeLabel = themeToggle.querySelector('.theme-label');
+function setTheme(theme, persist = true) {
+  document.documentElement.dataset.theme = theme;
+  const dark = theme === 'dark';
+  themeIcon.textContent = dark ? '☼' : '◐';
+  themeLabel.textContent = dark ? 'Tema claro' : 'Tema escuro';
+  const action = 'Alternar para tema ' + (dark ? 'claro' : 'escuro');
+  themeToggle.setAttribute('aria-label', action);
+  themeToggle.setAttribute('title', action);
+  themeToggle.setAttribute('aria-pressed', String(dark));
+  document.querySelector('meta[name="theme-color"]').content = dark ? '#111111' : '#ffffff';
+  if (persist) {
+    try { localStorage.setItem('normal-assusta-theme', theme); } catch (_) { /* storage may be unavailable on file URLs */ }
+  }
+}
+let initialTheme = 'dark';
+try {
+  const savedTheme = localStorage.getItem('normal-assusta-theme');
+  if (savedTheme === 'dark' || savedTheme === 'light') initialTheme = savedTheme;
+} catch (_) { /* use the default theme when storage is unavailable */ }
+setTheme(initialTheme, false);
+themeToggle.addEventListener('click', () => {
+  setTheme(document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark');
+});
