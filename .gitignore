@@ -1,0 +1,5 @@
+# Ignore image files unless they are used by the site README.
+*.png
+*.jpeg
+*.gif
+!assets/univesp-logo.png
